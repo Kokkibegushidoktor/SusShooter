@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: gcc.exe build ",
+			"command": "D:\\parasha\\gcc\\bin\\gcc.exe",
+			"args": [
+				"-g3",
+				"-Wpedantic",
+				"-Ivendor/include/",
+				"-D_DEBUG",
+				"${workspaceFolder}/src2/*.c",
+				"-o",
+				"sus_shooter2",
+				//"-O2", 
+				"-Lvendor/lib/win/",
+				"./vendor/lib/win/libraylib.a",
+				"-lopengl32",
+				"-lgdi32",
+				"-lwinmm"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: D:\\parasha\\gcc\\bin\\gcc.exe"
+		}
+	]
+}
