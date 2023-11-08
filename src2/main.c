@@ -830,7 +830,7 @@ void DrawWeapon(void) {
 }
 
 void DrawUI(void) {
-    DrawText(TextFormat("%f %f %f",cam.position.x,cam.position.y,cam.position.z), 220, 40, 20, GRAY);
+    //DrawText(TextFormat("%f %f %f",cam.position.x,cam.position.y,cam.position.z), 220, 40, 20, GRAY);
     DrawFPS(10, 10);
     const char* text;
     DrawText(TextFormat("Ammo: %d/%d", Weapons[selectedWeapon].ammo, Weapons[selectedWeapon].ammoCap), 10, GetScreenHeight()-20, 20, WHITE);
