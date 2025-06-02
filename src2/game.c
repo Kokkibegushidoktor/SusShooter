@@ -226,6 +226,7 @@ int curMaxEnemies = 10;
 int curEnemies = 10;
 int curWave = 0;
 int score = 0;
+bool debug = false;
 
 Ray debugRays[8] = {0};
 
@@ -244,8 +245,13 @@ float GetMusicAdaptiveVolume(const Music* m) {
     return v;
 }
 
-int startGame(void)
+int startGame(bool drawDebug)
 {
+    debug = drawDebug;
+    if (debug) {
+        Weapons[1].unlocked = true;
+        Weapons[2].unlocked = true;
+    }
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 1280;
@@ -862,9 +868,11 @@ void Draw(void) {
         BeginMode3D(cam);
             DrawSkybox();
             DrawScene();
-            //for(int i = 0; i<8; i++) {
-            //    DrawRay(debugRays[i], RED);
-            //}
+            if (debug) {
+                for(int i = 0; i<8; i++) {
+                    DrawRay(debugRays[i], RED);
+                }
+            } 
         EndMode3D();
         DrawWeapon();
         DrawUI();

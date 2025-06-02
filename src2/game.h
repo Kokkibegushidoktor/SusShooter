@@ -1,1 +1,1 @@
-int startGame(void);
+int startGame(bool);
