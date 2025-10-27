@@ -1,5 +1,4 @@
 COMPILER = gcc
-SUP = hi
 
 GAME_TITLE = Sus Shooter
 GAME_VERSION = "0.0.1"
